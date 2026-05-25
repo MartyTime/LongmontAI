@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { BrainCircuit, ExternalLink, Users, BookOpen } from 'lucide-react';
+import { BrainCircuit, ExternalLink, Users, BookOpen, Clock } from 'lucide-react';
 
 interface LayoutProps {
     children: ReactNode;
@@ -35,6 +35,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         <Link to="/" className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                             <BookOpen size={16} />
                             <span>Blog</span>
+                        </Link>
+                        <Link to="/countdown" className="flex items-center gap-2 text-sm px-3 py-1.5 rounded-lg border border-[var(--accent-cyan)]/40 bg-[var(--accent-cyan)]/5 text-[var(--accent-cyan)] hover:bg-[var(--accent-cyan)]/15 transition-colors">
+                            <Clock size={14} />
+                            <span>Countdown</span>
                         </Link>
                     </div>
                 </nav>

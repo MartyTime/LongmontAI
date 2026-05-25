@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Feed from './pages/Feed';
 import Edition from './pages/Edition';
+import Countdown from './pages/Countdown';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route path="/" element={<Feed />} />
           <Route path="/edition/:id" element={<Edition />} />
           {/* Placeholder for about page */}
+          <Route path="/countdown" element={<Countdown />} />
           <Route path="/about" element={
             <div className="text-center py-20">
               <h1 className="text-4xl font-bold mb-4">About AI Innovations</h1>
