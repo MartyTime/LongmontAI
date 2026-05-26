@@ -411,3 +411,130 @@ iframe {
     max-width: none;
   }
 }
+
+/* Countdown page animations */
+@keyframes digit-roll {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  35% {
+    transform: translateY(8%);
+  }
+  55% {
+    transform: translateY(-4%);
+  }
+  70% {
+    transform: translateY(2%);
+  }
+  85% {
+    transform: translateY(-1%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.digit-roll {
+  animation: digit-roll 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateX(var(--cx)) translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(var(--cx) + var(--cdrift))) translateY(110vh) rotate(calc(var(--crot) + 720deg));
+    opacity: 0;
+  }
+}
+
+.confetti-fall {
+  animation: confetti-fall var(--cdur) var(--cdelay) infinite linear both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease both;
+}
+
+@keyframes fade-in-delay {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-delay {
+  animation: fade-in-delay 0.6s 0.1s ease both;
+}
+
+@keyframes fade-in-late {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-late {
+  animation: fade-in-late 0.5s 0.35s ease both;
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s 0.2s ease both;
+}
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.animate-live-pulse {
+  animation: live-pulse 1s ease-in-out infinite;
+}
+
+@keyframes ring-spin {
+  from { stroke-dashoffset: 565.49; }
+  to { stroke-dashoffset: 0; }
+}
+
+.animate-ring-spin {
+  animation: ring-spin 60s linear infinite;
+}
