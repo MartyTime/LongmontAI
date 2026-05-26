@@ -75,33 +75,11 @@ interface DigitProps {
   value: number;
   label: string;
 }
-
 const Digit: React.FC<DigitProps> = ({ value, label }) => {
-  const [animKey, setAnimKey] = useState(0);
-  const prevRef = useRef(value);
-
-  useEffect(() => {
-    if (prevRef.current !== value) {
-      prevRef.current = value;
-      setAnimKey(k => k + 1);
-    }
-  }, [value]);
-
   return (
     <div className="flex flex-col items-center">
-      <div className="relative overflow-hidden">
-        <div
-          key={animKey}
-          className="digit-roll text-6xl sm:text-7xl md:text-8xl font-bold font-mono tracking-tighter leading-none"
-          style={{
-            background: 'linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}
-        >
-          {String(value).padStart(2, '0')}
-        </div>
+      <div className="text-6xl sm:text-7xl md:text-8xl font-bold font-mono tracking-tighter leading-none text-white">
+        {String(value).padStart(2, '0')}
       </div>
       <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[var(--text-muted)] mt-2">
         {label}
